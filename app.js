@@ -6,6 +6,7 @@ const port=process.env.PORT || 80;
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(express.static('public'));
 
 app.get('/', function (req, res) {
    res.sendFile('index.html', {root: __dirname })
