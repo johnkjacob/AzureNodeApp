@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>RM EdTech-athon filter page</title>
+		<script type="text/javascript">
+		function displayScore() {
+			var urlParams = new URLSearchParams(window.location.search);
+			var mild = 0 ;
+			var strong = 0 ;
+			var veryStrong = 0;
+			mild = urlParams.get('mild');
+			strong = urlParams.get('strong');
+			veryStrong = urlParams.get('verystrong');
+			var message = ' Your comment have '+mild+' mild words, '+strong+' strong words and '+veryStrong + ' very strong words';
+			document.getElementById("message_area").innerHTML = message;
+		}
+		</script>
+		<body onload="displayScore()">
+			<div id="message_area">
+			</div>
+		</body>
+	</head>
+</html>
