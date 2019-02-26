@@ -17,6 +17,14 @@ app.post('/', function(req, res) {
     res.send("Your comment is recorded :)");
 });
 
+app.post('/filterpage', function(req, res) {
+    var mild = req.query.mild;
+	var strong = req.query.strong;
+	var veryStrong = req.query.verystrong;
+	var message = ' Your comment have '+mild+' mild words, '+strong+' strong words and '+veryStrong + ' very strong words';
+    res.send(message);
+});
+
 var server = app.listen(port, function () {
    var host = server.address().address;
    var port = server.address().port;
